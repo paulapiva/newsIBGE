@@ -4,14 +4,14 @@ import { useContext } from "react";
 import { NewsContext } from "../../context/Context";
 
 function Details() {
-  const { news, setNews } = useContext(NewsContext);
+  const { news} = useContext(NewsContext);
   const { id } = useParams();
   const newsItem = news.find(item => item.id.toString() === id);
   
   if (!newsItem) {
     return <div>Notícia não encontrada</div>;
   }
-   const imagensObj = JSON.parse(newsItem.imagens);
+  const imagensObj = JSON.parse(newsItem.imagens);
   return (
     <div>
       <Title>{newsItem.titulo}</Title>

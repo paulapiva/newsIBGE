@@ -10,7 +10,7 @@ import favoriteBIcon from '../../assets/blackHeartIcon.svg';
 import { Destak, Div, Title } from "../../styles/globalStyles";
 
 function Home() {
-  const { news, setNews } = useContext(NewsContext);
+  const { news } = useContext(NewsContext);
   const [favorites, setFavorites] = useState<NewsItem[]>([]);
   const latestNews = news.length > 0 ? news[0] : null;
   const otherNews = news.length > 1 ? news.slice(1) : [];

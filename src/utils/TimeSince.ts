@@ -1,13 +1,13 @@
-const convertDateBRToISO = (dateBR) => {
+const convertDateBRToISO = (dateBR: string) => {
   const parts = dateBR.split(" ");
   const dateParts = parts[0].split("/");
   const timePart = parts[1];
   return `${dateParts[2]}-${dateParts[1]}-${dateParts[0]}T${timePart}`;
 };
 
-export const TimeSince = (dateBR) => {
+export const TimeSince = (dateBR: string) => {
   const dateISO = convertDateBRToISO(dateBR);
-  const seconds = Math.floor((new Date() - new Date(dateISO)) / 1000);
+  const seconds: number = Math.floor((new Date().getTime() - new Date(dateISO).getTime()) / 1000);
 
   let interval = seconds / 31536000;
   if (interval > 1) {
