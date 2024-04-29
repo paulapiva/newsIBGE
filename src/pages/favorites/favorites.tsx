@@ -3,6 +3,7 @@ import { Div, Title } from "../../styles/globalStyles";
 import favoriteBIcon from '../../assets/blackHeartIcon.svg';
 import { NewsItem } from "../../utils/types";
 import Header from "../../components/header/Header";
+import Footer from "../../components/footer/Footer";
 
 function Favorite() {
   const [favorites, setFavorites] = useState<NewsItem[]>([]);
@@ -41,6 +42,7 @@ function Favorite() {
       ) : (
         <p>Você não tem notícias favoritas.</p>
       )}
+      <Footer />
     </div>
   )
 }

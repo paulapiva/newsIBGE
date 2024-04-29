@@ -54,10 +54,28 @@ export const Cabecalho = styled.h1`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 
   a{
     color: #021301;
     font-size: large;
     text-decoration: none;
+  }
+`
+
+export const Rodape = styled.p`
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 10px;
+  display: flex;
+  justify-content: space-between;
+  
+  a{
+    font-size: large;
+    margin-right: 15px;
+    text-decoration: none;
+  }
+  
+  p{
+    color: #021301;
   }
 `
