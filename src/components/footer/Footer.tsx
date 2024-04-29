@@ -1,4 +1,4 @@
-import { Cabecalho, Rodape, Title } from "../../styles/globalStyles";
+import { Rodape } from "../../styles/globalStyles";
 import iconeFB from "../../assets/icone_facebook.png";
 import iconeIG from "../../assets/icone_instagram.png";
 import iconeYT from "../../assets/icone_youtube.png";

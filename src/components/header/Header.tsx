@@ -1,4 +1,4 @@
-import { Cabecalho, Noticias, Title } from "../../styles/globalStyles";
+import { Cabecalho, Noticias } from "../../styles/globalStyles";
 import Logo from "../../assets/ibge-logo.png"
 
 function Header() {

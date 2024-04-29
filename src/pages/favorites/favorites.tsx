@@ -8,7 +8,7 @@ import Footer from "../../components/footer/Footer";
 function Favorite() {
   const [favorites, setFavorites] = useState<NewsItem[]>([]);
 
-   useEffect(() => {
+  useEffect(() => {
     const storedFavorites = JSON.parse(localStorage.getItem('favoriteNews') || '[]');
     setFavorites(storedFavorites);
   }, []);

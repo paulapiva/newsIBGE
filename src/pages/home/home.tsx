@@ -7,7 +7,7 @@ import { TimeSince} from '../../utils/TimeSince'
 import { NewsItem } from "../../utils/types";
 import favoriteWIcon from '../../assets/whiteHeartIcon.svg';
 import favoriteBIcon from '../../assets/blackHeartIcon.svg';
-import { Destak, Div, Div2, Title } from "../../styles/globalStyles";
+import { Destak, Div, Title } from "../../styles/globalStyles";
 
 function Home() {
   const { news, setNews } = useContext(NewsContext);
@@ -22,7 +22,7 @@ function Home() {
 
   const handleFavorite = (selectedNews: NewsItem) => {
     let updatedFavorites;
-     if (favorites.some(favorite => favorite.id === selectedNews.id)) {
+    if (favorites.some(favorite => favorite.id === selectedNews.id)) {
       updatedFavorites = favorites.filter(favorite => favorite.id !== selectedNews.id);
     } else {
       updatedFavorites = [...favorites, selectedNews];
