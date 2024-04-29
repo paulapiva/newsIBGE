@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { Title } from "../../styles/globalStyles";
+import { Div, Title } from "../../styles/globalStyles";
 import favoriteBIcon from '../../assets/blackHeartIcon.svg';
 import { NewsItem } from "../../utils/types";
+import Header from "../../components/header/Header";
 
 function Favorite() {
   const [favorites, setFavorites] = useState<NewsItem[]>([]);
@@ -18,10 +19,11 @@ function Favorite() {
   };
 
   return (
-  <div>
+    <div>
+    <Header />
       {favorites.length > 0 ? (
         favorites.map((newsItem) => (
-          <div key={newsItem.id}>
+          <Div key={newsItem.id}>
             <Title>{newsItem.titulo}</Title>
             <p>{newsItem.introducao}</p>
             <button
@@ -34,7 +36,7 @@ function Favorite() {
                 alt="Desfavoritar"
               />
             </button>
-          </div>
+          </Div>
         ))
       ) : (
         <p>Você não tem notícias favoritas.</p>

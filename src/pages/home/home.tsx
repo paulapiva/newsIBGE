@@ -7,6 +7,7 @@ import { TimeSince} from '../../utils/TimeSince'
 import { NewsItem } from "../../utils/types";
 import favoriteWIcon from '../../assets/whiteHeartIcon.svg';
 import favoriteBIcon from '../../assets/blackHeartIcon.svg';
+import { Destak, Div, Div2, Title } from "../../styles/globalStyles";
 
 function Home() {
   const { news, setNews } = useContext(NewsContext);
@@ -34,34 +35,34 @@ function Home() {
     <>
       <Header />
           {latestNews && (
+      <Destak className="latest-news">
             <>
             <Link to={latestNews.link}>
-              <div className="latest-news">
                 <div key={latestNews.id}>
-                  <h2>{latestNews.titulo}</h2>
+                  <Title>{latestNews.titulo}</Title>
                   <p>{latestNews.introducao}</p>
                   <p>Publicado há {TimeSince(latestNews.data_publicacao)}</p>
                 </div>
-              </div>
           </Link>
           <button
             type="button"
             onClick={() => handleFavorite(latestNews)}
-          >
+            >
             <img
               data-testid="favorite-btn"
               src={favorites.some(fav => fav.id === latestNews.id) ? favoriteBIcon : favoriteWIcon}
               alt={favorites.some(fav => fav.id === latestNews.id) ? 'Desfavoritar' : 'Favoritar'}
-            />
+              />
           </button>
           </>
+        </Destak>
         )}
-        <div className="news-list">
           {otherNews.map((item) => (
+        <Div className="news-list">
             <>
             <Link to={item.link} key={item.id} >
           <div>
-            <h2>{item.titulo}</h2>
+            <Title>{item.titulo}</Title>
             <p>{item.introducao}</p>
             <p>Publicado há {TimeSince(item.data_publicacao)}</p>
           </div>
@@ -77,8 +78,8 @@ function Home() {
             />
           </button>
           </>
+        </Div>
         ))}
-        </div>
       <Footer />
     </>
   )
